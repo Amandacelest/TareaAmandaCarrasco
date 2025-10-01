@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center; 
+            align-items: center;     
+            background: linear-gradient(135deg, #6b4deb, #00c9ff); 
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+        }
+
+        #boton {
+            background-color: rgb(107, 78, 235);
+        }
+
+        #boton2 {
+            background-color: aqua;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input id="numero1" type="number">
+        <button id="boton">Tocar Aquí</button>
+        <p id="parrafo"></p>
+
+        <input id="texto1" type="text">
+        <button id="boton2">Apretar Aquí</button>
+        <p id="parrafo2"></p>
+    </div>
+
+    <script>
+        document.getElementById('boton').addEventListener('click', preguntarNumero)
+        function preguntarNumero(){
+            const val = document.getElementById('numero1').value  
+            document.getElementById('parrafo').innerHTML = val
+        }
+
+        document.getElementById('boton2').addEventListener('click', preguntarTexto)
+        function preguntarTexto(){
+            const val = document.getElementById('texto1').value  
+            document.getElementById('parrafo2').innerHTML = val
+        }
+    </script>
+</body>
+</html>
+
