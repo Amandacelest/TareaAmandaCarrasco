@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estela simple del mouse</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: rgb(211, 255, 254);
+    }
+
+    .rastro {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: rgb(251, 144, 217);
+      border-radius: 50%;
+      pointer-events: none; 
+      opacity: 0.8;
+      transition: transform 0.2s, opacity 0.5s;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    document.addEventListener("mousemove", function(event) {
+      
+      let punto = document.createElement("div");
+      punto.className = "rastro";
+      punto.style.left = event.pageX + "px";
+      punto.style.top = event.pageY + "px";
+
+     
+      document.body.appendChild(punto);
+
+      
+      setTimeout(function() {
+        punto.remove();
+      }, 300);
+    });
+  </script>
+
+</body>
+</html>
